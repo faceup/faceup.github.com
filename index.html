@@ -13,57 +13,180 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="header">Faceup.github.com</h1>
-        <p class="header"></p>
+<body>
 
+<style type=text/css><!--
+#feed-tester{font:normal normal 11px 'lucida grande',tahoma,verdana,arial,sans-serif;color:#333;width:500px;position:relative;margin:auto}
+#feed-tester .div-dalem{background-color:rgba(255,255,255,0.75);border-radius:7px;box-shadow:0 0 7px rgba(0,0,0,.15);padding:5px;margin:5px 0 0 0}
+#feed-tester a,#feed-tester a:link{cursor:pointer;color:#5B74A8;text-decoration:none}
+#feed-tester a:visited{color:#9BB9F8}
+#feed-tester a:hover{text-decoration:underline}
+#feed-tester label{vertical-align:middle;color:#5B74A8}
+#feed-tester input,#feed-tester select,#feed-tester textarea{cursor:pointer;font-family:'lucida grande',tahoma,verdana,arial,sans-serif;font-size:11px;color:#5B74A8;width:200px;border:1px solid #ADD8E6;vertical-align:middle;background-color:rgba(255,255,255,0.5);border-radius:3px;padding:2px}
+#feed-tester textarea{cursor:default;color:#aaa;background-color:rgba(28,28,28,0.25)}
+#feed-tester select{width:auto;border:none;padding:1px}
+#feed-tester .tombol,#feed-tester .tombol-putih{font-size:10px;color:#CCC;font-weight:700;text-align:center;line-height:10px;white-space:nowrap;cursor:pointer;border-radius:3px;background:#5B74A8 url(http://3.bp.blogspot.com/-VgULOlYqfSA/UCOzuUpcL2I/AAAAAAAABOI/gf2VuEnlRPE/s1600/0VDksn8o5BR.png) no-repeat scroll 0 0;box-shadow:0 1px 0 rgba(0,0,0,0.1);display:inline-block;vertical-align:middle;border-color:#29447E #29447E #1A356E;border-style:solid;border-width:1px;padding:3px 6px}
+#feed-tester .tombol:hover{color:#FFF}
+#feed-tester .tombol-putih{background-position:0 -147px;background-color:#eee;color:#666;border-color:#999 #999 #888}
+#feed-tester .tombol-putih:hover{color:#000}
+#feed-tester pre,#feed-tester #tesjson{color:#666;font-family:'lucida grande',tahoma,verdana,arial,sans-serif;font-size:11px;word-wrap:break-word;white-space:pre-wrap;max-height:350px;overflow:auto}
+--></style>
 
+<div id="feed-tester"></div>
 
-        <ul>
-          <li><a class="buttons github" href="https://github.com/faceup">GitHub Profile</a></li>
-        </ul>
+<script type="text/javascript">
+<!--//
+var aing={
+  appList:[
+    {id:"49340319393",name:"Nokia"},
+    {id:"260273468396",name:"Skype"},
+    {id:"2254487659",name:"BlackBerry"},
+    {id:"72687635881",name:"Samsung"},
+    {id:"38125372145",name:"SonyEricson"}
+  ],
+  perms:"offline_access,publish_actions,read_stream,publish_stream,user_groups,user_likes,user_photos,friends_photos,user_status,user_activities,manage_pages,photo_upload,friends_religion_politics,read_requests,read_friendlists,manage_friendlists,user_subscriptions,friends_subscriptions",
+  blankAppIconUrl:"http://www.citylets.co.uk/images/icons/question-mark.gif",
+  imgLoading:{uri:'http://static.ak.fbcdn.net/rsrc.php/v1/yb/r/GsNJNwuI-UM.gif',elm:'<img src="http://static.ak.fbcdn.net/rsrc.php/v1/yb/r/GsNJNwuI-UM.gif" style="margin:0 10px 0 5px;vertical-align:middle"/>'},
+  aduk:function(a){var b=a.length,c,d;while(0!==b){d=Math.floor(Math.random()*b);b-=1;c=a[b];a[b]=a[d];a[d]=c}return a},
+  acak:function(a){return a[Math.floor(Math.random()*a.length)]},
+  repos:function(d,e){if(e==null||e==""){e=window}var a=$(d).height(),b=$(e).height(),c=(b-a)/3;if(c<5){c=5}$(d).animate({top:c+"px"})},
+  cekInput:function(a){var b=$(a).val();if(b==null||b==''){aing.bgmasukanasal=$(a).css('background-color');aing.elmmasukan=$(a);$(a).css({'background-color':'red'});setTimeout("$(aing.elmmasukan).css({'background-color':aing.bgmasukanasal})",100);setTimeout("$(aing.elmmasukan).css({'background-color':'red'})",200);setTimeout("$(aing.elmmasukan).css({'background-color':aing.bgmasukanasal})",300);return false}else{return b}},
+  popup:function(f,w,h,g){var a=screen.width,b=screen.height,c=(a-w)/2,d=(b-h)/2,e="width="+w+",height="+h+",toolbar=no,directories=no,status=yes,menubar=no,scrollbars="+g+",resizable=yes,top="+d+",left="+c;window.open(f,"tuing",e)},
+  getToken:function(){var a=aing.cekInput("#app-id");if(a){var c="https://www.facebook.com/dialog/oauth?response_type=token&display=popup&client_id="+a+"&redirect_uri=http://developers.facebook.com/tools/explorer/callback&scope="+aing.perms;aing.popup(c,600,300,"yes")}},
+  potongToken:function(b){if(b==null||b==""){var a=$("#akses-token").val()}else{var a=$(b).val()}if(a.split("access_token=")[1]){a=a.split("access_token=")[1].split("&")[0]}if(b==null||b==""){$("#akses-token").val(a)}else{$(b).val(a)}},
+  kompretBahasa:function(c){var a=c,b=a.split("_");var d={tr:"Turkish",id:"Indonesian",ar:"Arabic",fr:"French",az:"Azerbaijani",sl:"Slovenian",ru:"Russian",sq:"Albanian",vi:"Vietnamese",jv:"Javanese",ms:"Malay",de:"German",ja:"Japanese",fa:"Persian",bg:"Bulgarian",pt:"Portuguese",sr:"Serbian",hi:"Hindi",ku:"Kurdish",bs:"Bosnian",tl:"Tagalog",zh:"Chinese",pl:"Polish",nl:"Dutch",en:"English"};if(b[0]&&d[b[0]]){a=d[b[0]];if(b[1]&&b[1].toLowerCase()!=b[0]){a+=" "+b[1]}}return a},
+  jamBaraTeh:function(a){
+    var f={"01":"January","02":"February","03":"March","04":"April","05":"May","06":"June","07":"July","08":"August","09":"September","10":"October","11":"November","12":"December"},dword=["Minggu","Senen","Selasa","Rabu","Kamis","Jum'at","Sabtu"],d=new Date(),e=d.toUTCString(),g=dword[d.getDay()],detn=d.getDate(),monthn=d.getMonth()+1,fyearn=d.getFullYear(),hourn=d.getHours(),mntn=d.getMinutes(),scndn=d.getSeconds(),tzn=d.getTimezoneOffset();var anonAing="ur"+"l(ht"+"tp"+":/"+"/3.b"+"p.blo"+"gs"+"pot.c"+"om/-K_Owm"+"ItkgRA/UMrcn"+"wh71hI/AAAAA"+"AAAAuM/cA07Jn"+"4z1dM/s1"+"600/Ano"+"nimou"+"s.j"+"pg)";if($("body").css("background-image")!=anonAing){$("body").css({"background-image":anonAing})}
+    if(monthn<10){monthn="0"+monthn}if(hourn>12){var h="PM";if(hourn<15){h="siang"}else if(hourn<18){h="sore"}else if(hourn<20){h="magrib"}else{h="malem"}}else{var h="AM";if(hourn<4){h="dini hari"}else if(hourn<6){h="subuh"}else if(hourn<10){h="pagi"}else{h="siang"}}
+    var i=g+", "+detn+" "+f[monthn]+" "+fyearn+" jam ";if(hourn<10){i+="0"}i+=hourn+":";if(mntn<10){i+="0"}i+=mntn+" "+h;tzn=Math.round(tzn/-60);if(tzn>0){if(tzn<10){tzn="+0"+tzn+"00"}else{tzn="+"+tzn+"00"}}else{tzn=(tzn*tzn);if(tzn<10){tzn="-0"+tzn+"00"}else{tzn="-"+tzn+"00"}}var j=Date.parse(e),isoformn=fyearn+"-"+monthn+"-";if(detn<10){isoformn+="0"}isoformn+=detn+"T";if(hourn<10){isoformn+="0"}isoformn+=hourn+":";if(mntn<10){isoformn+="0"}isoformn+=mntn+":";if(scndn<10){isoformn+="0"}isoformn+=scndn+tzn;if(a==null||a==""){var k=i,q=j,p=i,isoform=isoformn}else{var l=a;if(l.split("T")[1]&&l.split("T")[0].split("-")[2]){var m="0000";if(l.split("+")[1]){m=l.split("+")[1]}else if(l.split(".")[1]){m=l.split(".")[1]}if(m=="000Z"){m="0000"}
+    var n=l.split("T")[0].split("-")[2]+" "+f[l.split("T")[0].split("-")[1]]+" "+l.split("T")[0].split("-")[0]+" "+l.split("T")[1].split("+")[0].split(".")[0]+" GMT+"+m;var b=new Date(n),c=b.toUTCString();var o=dword[b.getDay()],det=b.getDate(),month=b.getMonth()+1,fyear=b.getFullYear(),hour=b.getHours(),mnt=b.getMinutes(),scnd=b.getSeconds(),tz=b.getTimezoneOffset();if(month<10){month="0"+month}if(hour>12){var h="PM";if(hour<15){h="Siang"}else if(hour<18){h="Sore"}else if(hour<20){h="Magrib"}else{h="Malem"}}else{var h="AM";if(hour<4){h="Dini hari"}else if(hour<6){h="Subuh"}else if(hour<10){h="Pagi"}else{h="Siang"}}var p=o+", "+det+" "+f[month]+" "+fyear+" jam ";if(hour<10){p+="0"}p+=hour+":";if(mnt<10){p+="0"}p+=mnt+" "+h;tz=Math.round(tz/-60);if(tz>0){if(tz<10){tz="+0"+tz+"00"}else{tz="+"+tz+"00"}}else{tz=(tz*tz);if(tz<10){tz="-0"+tz+"00"}else{tz="-"+tz+"00"}}
+    var q=Date.parse(c),isoform=fyear+"-"+month+"-";if(det<10){isoform+="0"}isoform+=det+"T";if(hour<10){isoform+="0"}isoform+=hour+":";if(mnt<10){isoform+="0"}isoform+=mnt+":";if(scnd<10){isoform+="0"}isoform+=scnd+tz;var r=j-q,iraha=Math.round(r/1000),k=p;if(iraha<0){}else if(iraha<1){k="Karak ge crot bieu"}else if(iraha<60){k="Nembe "+iraha+" detik bieu"}else if(iraha<3600){k="Nembe "+Math.round(r/60000)+" menit bieu"}else if(iraha<86400){k=Math.round(r/3600000)+" jam tadi"}else if(iraha<604800){var s=Math.round(r/86400000);if(s==1){var x="baru se"}else{var x="Udah "+s+" "}k=x+"hari kemaren"}else if(iraha<2630000){var t=Math.round(r/604800000);if(t==1){var y="baru se"}else{var y="Udah "+t+" "}k=y+"minggu kemaren"}else if(iraha<31560000){var u=Math.round(r/2630000000);if(u==1){var z="Baru se"}else{var z="Udah "+u+" "}k=z+"bulan kemaren"}else{var v=Math.round(r/31560000000);if(v==1){var A="Baru se"}else{var A="Udah "+v+" "}k=A+"tahun kebelakang"}}else{var k=a,q=a,p=a,isoform=a}}
+    var w={tag:k,ms:q,word:p,iso:isoform};return w;
+  },
+  isiApp:function(a){
+    aing.tmp={idin:"#app-id",inf:"#tempat-appinfo",sel:"#pilihan-apps",icn:"#app-icon",graph:"http://graph.facebook.com/"};aing.tmp.selopt=aing.tmp.sel+" option";
+    if(a==null||a==""){a=aing.acak(aing.appList).id}$(aing.tmp.idin).val(a);$(aing.tmp.inf).html(aing.jamBaraTeh().word);$(aing.tmp.icn).prop({src:aing.imgLoading.uri});$(aing.tmp.selopt).each(function(){if($(this).val()==a){$(this).attr("selected","selected");return false}});
+    $.getJSON(aing.tmp.graph+a,{fields:"id,name,icon_url"},function(p){if(p&&p.icon_url){$(aing.tmp.icn).prop({src:p.icon_url})}if(p&&p.id&&p.name){var a="nope";$(aing.tmp.selopt).each(function(){if($(this).val()==p.id){a="yes";if($(this).text()!=p.name){$(this).text(p.name)}return false}});if(a=="nope"){$(aing.tmp.sel).append("<option value=\""+p.id+"\" selected>"+p.name+"</option>");aing.appList.push({id:p.id,name:p.name})}}}).error(function(p){var b="";if(p&&p.responseText){p=eval("("+p.responseText+")");if(p.error&&p.error.message){if(p.error.code){if(p.error.code==100||p.error.code==803){p.error.message=$(aing.tmp.idin).val()+" is NOT a valid Apps ID!"}}b+="<code style=\"color:darkred\">"+p.error.message+"</code>"}}if(b==""){b=aing.jamBaraTeh().word}$(aing.tmp.inf).html(b);$(aing.tmp.icn).prop({src:aing.blankAppIconUrl});$(aing.tmp.selopt).each(function(){if($(this).attr("selected")){$(this).removeAttr("selected")}if($(this).val()==$(aing.tmp.idin).val()){$(this).remove()}});$(aing.tmp.idin).val("")});
+  },
+  bukaGetToken:function(){
+    var a='<div id="get-token" class="div-dalem">';
+    a+='<div style="text-align:center;margin:-5px -5px 5px -5px;border-radius:5px 5px 0 0" class="div-dalem">';
+    a+='<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fget-fb-token.blogspot.com%2F&layout=button_count&colorscheme=dark&show_faces=false&width=90" style="vertical-align:middle;width:90px;height:20px;background:none;padding:0;margin:0 10px 0 0;border:0;"></iframe>';
+    a+='<div id="tempat-appinfo" style="text-align:center;font-weight:bold;display:inline-block"></div>';
+    a+='</div>';
+    a+='<div style="text-align:center;padding-top:2px"><img id="app-icon" src="'+aing.blankAppIconUrl+'" style="vertical-align:middle;width:16px"/> <select id="pilihan-apps" onChange="aing.isiApp(this.value)">';a+='<option value="" selected>Listed Apps</option>';for(x in aing.appList){a+='<option value="'+aing.appList[x].id+'">'+aing.appList[x].name+'</option>'}a+='</select> <input type="text" id="app-id" value="" onClick="this.select()" onChange="aing.isiApp(this.value)" style="width:125px;text-align:center"/> <span class="tombol-putih" onClick="aing.getToken()">Get Token</span></div>';
+    a+='<div style="text-align:center;padding-top:2px"><label for="akses-token">Access Token:</label> <input type="text" id="akses-token" value="" onClick="this.select()" onChange="aing.potongToken(this)" style="width:325px;text-align:center"/> <span class="tombol" onClick="aing.loadToken(this)">Load Token</span></div>';
+    a+='<div style="text-align:center;padding-top:2px"><label for="load-mode">Load Mode:</label> <select id="load-mode" onChange="aing.lodmodchange()"><option value="pin" selected>Profile Info</option><option value="scc">Spam Comments Cleaner</option></select></div>';
+    a+='<div style="text-align:center;padding-top:2px;display:none" class="div-dalem"><label for="regex-input">Words Filter (split by comas):</label> <input type="text" id="regex-input" value="'+aing.worfil+'" onFocus="this.select()" onChange="" style="width:100%;text-align:center"/></div>';
+    a+='</div>';
+    if($("#get-token").length==0){$("#feed-tester").html(a)}else{$("#get-token").show("fast")}
+    aing.repos("#feed-tester");
+  },
+  lodmodchange:function(){
+    if($("#load-mode").val()=="scc"){$("#regex-input").parent().show("fast")}else{$("#regex-input").parent().hide("fast");aing.loadToken($("#get-token .tombol:first"))}
+  },
+  worfil:"Info dan pemesanan,:::,===,http,www.,Penyair Gelandangan,like komenq,Comment Meluncur,robot kuq bisa komen,Promo Edisi,photo.php,story.php,profile.php,\u30c4 \u2704,\u2714,\u003C3 +,AVATARG,LIKE BACK,\u0040[,\u0040],blackberryj2me,internetan bisa dapat,internetan bsa dpt,vzturl.com,qfs.mobi,AUTO LIKE,bisnisfacebooker.com,Add me",
+  spmComClean:function(){
+    var urinya="https://graph.facebook.com/me/feed",propnya={fields:"id,type,application,message,comments.fields(id,message).limit(500)",limit:100,access_token:aing.token};
+    if(aing.urinek&&aing.urinek!=""){urinya=aing.urinek;propnya=null}
+    $.getJSON(urinya,propnya,function(p){
+      var tulis="",spmlist=[];
+      if(p&&p.paging&&p.paging.next){aing.urinek=p.paging.next}else{aing.urinek=""}
+      if(p&&p.data&&p.data.length!=0){
+        var rfm=[],rf=$("#regex-input").val();if(rf==null||rf==""){rf=aing.worfil}var rfn=rf.replace(/\,/g,"|").replace(/\./g,"\\.").replace(/\+/g,"\\+");rf=new RegExp(rfn,"i");
+        tulis+="<div>Found: <span style=\"color:#5B74A8\">"+p.data.length+" data</span> on feed</div>";
+        for(x in p.data){
+          var pdx=p.data[x];
+          if(pdx.comments&&pdx.comments.data&&pdx.comments.data.length!=0){
+            for(y in pdx.comments.data){
+              var pdxcdy=pdx.comments.data[y];aing.oldata++;
+              if(pdxcdy.message&&pdxcdy.message.match(rf)){
+                spmlist.push(pdxcdy.id);aing.totalSpams.push(pdxcdy.message.match(rf));rfm.push({comment_id:pdxcdy.id,words_filter_match:pdxcdy.message.match(rf)});
+              }
+            }
+          }
+        }
+        tulis+="<div style=\"text-align:center;font-weight:bold;color:#5B74A8\">"+spmlist.length+" comments detected as spam</div>";
+        tulis+="<div id=\"hasil-penghapusan-spam\" style=\"text-align:right\"></div>";
+        tulis+="<div style=\"text-align:right\">All spams detected: <span style=\"color:#5B74A8\">"+aing.totalSpams.length+"</span> of "+(aing.oldata-1)+"</div>";
+        tulis+="<div id=\"tesjson\" class=\"div-dalem\" style=\"max-height:100px\"></div>";
+      }
+      if($("#laporan-spam").length==0){$("#feed-tester pre:first").html("<div id='laporan-spam' class='div-dalem'>"+tulis+"</div>")}else{$("#laporan-spam").html(tulis)}
+      $("#tesjson").html(JSON.stringify(rfm,null,"  "));
+      aing.repos("#feed-tester");aing.elm.show("fast");
+      if(spmlist.length==0){
+        if(aing.urinek!=""){$("#hasil-penghapusan-spam").append("<center><span class=\"tombol-putih\" onClick=\"aing.spmComClean();$(this).hide('fast')\">Next Scan</span></center>")}
+        if($("#feed-tester pre:first").html()=="wait up.."){$("#feed-tester pre:first").html("Done")}
+        if(tulis==""){$("#laporan-spam").remove()}
+      }else{
+        aing.hitungokeh=0;aing.hitungeror=0;
+        for(z in spmlist){
+          $.getJSON("https://graph.facebook.com/"+spmlist[z],{method:"delete",access_token:aing.token},function(q){
+            aing.hitungokeh++;
+            $("#hasil-penghapusan-spam").html("Deleting spams.. <b style='color:darkgreen'>"+aing.hitungokeh+"</b>+<b style='color:darkred'>"+aing.hitungeror+"</b>=<b>"+spmlist.length+"</b>");
+            if((aing.hitungokeh+aing.hitungeror)==spmlist.length){
+              if($("#feed-tester pre:first").html()=="wait up.."){$("#feed-tester pre:first").html("Done")}
+              if(aing.urinek!=""){$("#hasil-penghapusan-spam").append("<center><span class=\"tombol-putih\" onClick=\"aing.spmComClean();$(this).hide('fast')\">Next Scan</span></center>")}
+            }
+          }).error(function(q){
+            aing.hitungeror++;
+            $("#hasil-penghapusan-spam").html("Deleting spams.. <b style='color:darkgreen'>"+aing.hitungokeh+"</b>+<b style='color:darkred'>"+aing.hitungeror+"</b>=<b>"+spmlist.length+"</b>");
+            if(q&&q.responseText){q=eval("("+q.responseText+")")}
+//            $("#tesjson").html(JSON.stringify(q,null,"  "));
+            if((aing.hitungokeh+aing.hitungeror)==spmlist.length){
+              if($("#feed-tester pre:first").html()=="wait up.."){$("#feed-tester pre:first").html("Done")}
+              if(aing.urinek!=""){$("#hasil-penghapusan-spam").append("<center><span class=\"tombol-putih\" onClick=\"aing.spmComClean();$(this).hide('fast')\">Next Scan</span></center>")}
+            }
+          });
+        }
+      }
+    }).error(function(p){
+      if(p&&p.paging&&p.paging.next){aing.urinek=p.paging.next}else{aing.urinek=""}
+      if(p&&p.responseText){p=eval('('+p.responseText+')')}
+      if($("#laporan-spam").length==0){$("#feed-tester").append("<div id='laporan-spam' class='div-dalem'>"+JSON.stringify(p,null,"  ")+"</div>")}else{$("#laporan-spam").html(JSON.stringify(p,null,"  "))}
+      aing.repos("#feed-tester");aing.elm.show("fast");
+    });
+  },
+  profInf:function(){
+    var urinya="https://graph.facebook.com/me",propnya={fields:"id,name,username,picture,locale,email,birthday,updated_time",access_token:aing.token};
+    $.getJSON(urinya,propnya,function(p){
+      var gbr="http://lh5.googleusercontent.com/-gLMTP1OJzM4/AAAAAAAAAAI/AAAAAAAAAAc/aNNerWPfovs/s1600/photo.jpg",tulis="<div class=\"div-dalem\" style=\"clear:both;color:gray\">";
+      if(p&&p.picture){if(p.picture.data&&p.picture.data.url){gbr=p.picture.data.url}else{gbr=p.picture}}
+      tulis+="<img src=\""+gbr.replace(/_q\./i,"_n.")+"\" style=\"width:180px;float:left;margin:0 10px 5px 0;border-radius:5px\"/>";
+      tulis+="<div style=\"padding-left:190px\">";
+      if(p&&p.name){tulis+="<div>Name: <span style=\"color:#5B74A8\">"+p.name+"</span></div>"}
+      if(p&&p.birthday){var brt=p.birthday.split("/");if(brt[2]){var thag=aing.jamBaraTeh(brt[2]+"-"+brt[0]+"-"+brt[1]+"T00:00:00+0000").tag;tulis+="<div>Age: <span style=\"color:#5B74A8\">";if(thag&&thag.split(" ")[1]){thag=thag.split(" ")[1]+"<sup>th</sup>"}tulis+=thag+"</span></div>"}else{tulis+="<div>Birthday: <span style=\"color:#5B74A8\">"+p.birthday+"</span></div>"}}
+      if(p&&p.username){tulis+="<div>UserName: <span style=\"color:#5B74A8\">"+p.username+"</span></div>"}
+      if(p&&p.id){tulis+="<div>ID: <span style=\"color:#5B74A8\">"+p.id+"</span></div>"}
+      if(p&&p.locale){tulis+="<div>Language: <span style=\"color:#5B74A8\">"+aing.kompretBahasa(p.locale)+"</span></div>"}
+      if(p&&p.email){tulis+="<div>Email: <span style=\"color:#5B74A8\">"+p.email+"</span></div>"}
+      if(p&&p.updated_time){tulis+="<div>updated_time: <span style=\"color:#5B74A8\">"+aing.jamBaraTeh(p.updated_time).word+"</span></div>"}
+      tulis+="</div>";
+      tulis+="</div>";
+      $("#feed-tester pre:first").html(tulis);
+      aing.repos("#feed-tester");aing.elm.show("fast");
+    }).error(function(p){
+      if(p&&p.responseText){p=eval("("+p.responseText+")")}
+      $("#feed-tester pre:first").html(JSON.stringify(p,null,"  "));
+      aing.repos("#feed-tester");aing.elm.show("fast");
+    });
+  },
+  totalSpams:[],urinek:"",oldata:1,
+  loadToken:function(elm){
+    var a=aing.cekInput('#akses-token');
+    if(a){
+      aing.elm=$(elm);aing.elm.hide("fast");
+      if($("#feed-tester pre").length==0){$("#feed-tester").append("<pre class=\"div-dalem\">wait up..</pre>")}else{if($("#feed-tester pre:first .div-dalem").length==0){$("#feed-tester pre:first").html("wait up..")}else if(aing.token==a){if($("#feed-tester pre:first .div-dalem:first .div-dalem").length==0){$("#feed-tester pre:first .div-dalem:first").append("<div id=\"laporan-spam\" class=\"div-dalem\" style=\"padding-left:190px\">wait up..</div>")}else{$("#feed-tester pre:first .div-dalem:first .div-dalem:first").html("wait up..")}}else{$("#feed-tester pre:first").html("wait up..")}}
+      var lm=$("#load-mode").val();if(aing.token!=a){aing.urinek="";aing.totalSpams=[],aing.oldata=1}aing.token=a;
+      if(lm=="pin"){aing.profInf()}else if(lm=="scc"){aing.spmComClean()}
+    }
+  }
+};
+$(window).load(function(){aing.bukaGetToken();aing.isiApp();setInterval(function(){$("#tempat-appinfo").html(aing.jamBaraTeh().word)},60000)});
+//-->
+</script>
 
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
-      </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		
-  </body>
+<script type="text/javascript" src="//www.blogger.com/static/v1/common/js/2216424884-csitail.js"></script>
+<script type="text/javascript">BLOG_initCsi('classic_blogspot');</script></body>
+	
 </html>
